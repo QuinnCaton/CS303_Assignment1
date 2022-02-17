@@ -95,19 +95,16 @@ public:
 		if (a.getDateAssigned() == b.getDateAssigned()) {
 			return true;
 		}
-		else { return false; }
 	}
 	friend bool operator>(Assignment a, Assignment b) {
 		if (a.getDateAssigned() > b.getDateAssigned()) {
 			return true;
 		}
-		else { return false; }
 	}
 	friend bool operator<(Assignment a, Assignment b) {
 		if (a.getDateAssigned() < b.getDateAssigned()) {
 			return true;
 		}
-		else { return false; }
 	}
 };
 

@@ -3,6 +3,7 @@
 #include <string>
 #include <list>
 #include <iterator>
+#include <iomanip>
 using namespace std;
 
 Assignment::Assignment()
@@ -77,7 +78,7 @@ void addAssignment(list<Assignment>& myList)
 	Assignment newAssignment(name, subject, dateDue, dateAssigned);
 
 	myList.push_back(newAssignment);
-	myList.sort();
+	//myList.sort();
 
 	cin.clear();
 	cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -88,7 +89,8 @@ void printAssignments(list<Assignment> &myList)
 {
 	int i = 1;
 	for (auto f = myList.begin(); f != myList.end(); f++) {
-		cout << i << ": " << f->getName() << ", Due Date " 
+		cout << left << i << ": " << setw(20) << f->getName() << "Date Assigned: " << f->getDateAssigned().day <<
+			"/" << f->getDateAssigned().month << "/" << f->getDateAssigned().year << ", Due Date " 
 			 << f->getDateDue().day << "/" << f->getDateDue().month << "/"
 			 << f->getDateDue().year << endl;
 		i++;
